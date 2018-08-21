@@ -7,6 +7,12 @@ import React, { Component } from 'react'
      phone: ''
    }
 
+  // FUNCTION TO SUBMIT FORM
+  onSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  }
+
   //  FUNCTION TO PROCESS STATE CHANGE AND ALLOW TYPING
   onChange = e => this.setState({[e.target.name] : e.target.value});
 
@@ -16,7 +22,7 @@ import React, { Component } from 'react'
       <div className="card mb-3">
         <div className="card-header">Add Contact</div>
         <div className="card-body">
-          <form>
+          <form onSubmit={this.onSubmit}>
             {/* NAME */}
             <div className="form-group">
             <label htmlFor="name">Name</label>
